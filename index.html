@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #left{
+      width: 80px;
+      height: 80px;
+      background-color: #ccc;
+      font-size: 50px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #right{
+      width: 80px;
+      height: 80px;
+      background-color: #ccc;
+      font-size: 50px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .numbers{
+      width: 800px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .numbers>div{
+      width: 200px;
+      height: 80px;
+      font-size: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="left"><</div>
+    <div class="numbers">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+    <div id="right">></div>
+  </div>
+  <script>
+    const left = document.getElementById('left')
+    const right = document.getElementById('right')
+    const numbers = document.querySelector('.numbers')
+    const numberchd = numbers.children
+    const numberchds = [numberchd[0],numberchd[1],numberchd[2],numberchd[3],numberchd[4]]
+    const value = numberchds.shift()
+    const mvalue = numberchds.pop()
+   // const hamsoo = numberchds.splice(-1,3,numberchd[0])
+    // console.log(numberchds.splice(-1,3,numberchd[3]))
+    //Array.isArray(numberchd)
+   // console.log(Array.isArray(numberchd))
+    //console.log(Array.isArray(numberchds))
+    
+    //console.log(left)
+    //console.log(right)
+    //console.log(numbers)
+    //console.log(numberchd)
+
+    left.addEventListener('click',function(){
+      value.textContent = "2"
+      mvalue.textContent = "1"
+      numberchds.splice(1,1,numberchd[1].textContent = "3")
+      numberchds.splice(1,2,numberchd[2].textContent = "4")
+      numberchds.splice(1,3,numberchd[3].textContent = "5")
+    });
+
+    
+    right.addEventListener('click',function(){
+      value.textContent = "5"
+      mvalue.textContent = "4"
+      numberchds.splice(1,1,numberchd[1].textContent = "1")
+      numberchds.splice(1,2,numberchd[2].textContent = "2")
+      numberchds.splice(1,3,numberchd[3].textContent = "3")
+    });
+
+  </script>
+</body>
+</html>

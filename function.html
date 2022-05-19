@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 배열 생성기
+    function add(a,b){
+      return a + b;
+    }
+
+
+
+    function arrMakerReturnArr(eLement){
+      let arr = [];
+      //arr.push(eLement);
+      arr[0] = eLement;
+      arr[1] = add(1,2);
+      if(typeof eLement === "string"){
+        arr[2] = eLement.length
+      }
+
+      return arr;
+    }
+
+    console.log((arrMaker('아진')))
+
+  </script>
+</body>
+</html>
